@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark D. Rasmussen, M.D.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px;
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .credentials {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+        }
+        
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .highlight-item {
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 10px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .highlight-item strong {
+            display: block;
+            color: #2d3748;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+        
+        .highlight-item span {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .contact {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #4a5568;
+        }
+        
+        .contact-item svg {
+            width: 20px;
+            height: 20px;
+            color: #667eea;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: #764ba2;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mark D. Rasmussen, M.D.</h1>
+        <div class="credentials">Anesthesiologist • Entrepreneur • Innovator</div>
+        
+        <p class="tagline">
+            Physician-entrepreneur bridging clinical excellence with healthcare innovation. 
+            Combining 20+ years of anesthesiology expertise with bioengineering, software development, 
+            and med tech advisory experience.
+        </p>
+        
+        <div class="highlights">
+            <div class="highlight-item">
+                <strong>Clinical Practice</strong>
+                <span>Partner, Anesthesia Service Medical Group</span>
+            </div>
+            
+            <div class="highlight-item">
+                <strong>Med Tech Founder</strong>
+                <span>CEO, Sigil Science LLC</span>
+            </div>
+            
+            <div class="highlight-item">
+                <strong>Patent Holder</strong>
+                <span>Medical Device Innovation</span>
+            </div>
+            
+            <div class="highlight-item">
+                <strong>Military Service</strong>
+                <span>U.S. Navy, Operation Iraqi Freedom</span>
+            </div>
+        </div>
+        
+        <div class="contact">
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>San Diego, California</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
