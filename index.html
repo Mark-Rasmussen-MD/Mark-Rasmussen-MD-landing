@@ -1,184 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark D. Rasmussen, M.D.</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            padding: 60px;
-            animation: fadeIn 0.8s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 10px;
-        }
-        
-        .credentials {
-            font-size: 1.1rem;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            color: #4a5568;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            border-left: 4px solid #667eea;
-            padding-left: 20px;
-        }
-        
-        .highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .highlight-item {
-            padding: 20px;
-            background: #f7fafc;
-            border-radius: 10px;
-            border-left: 3px solid #667eea;
-        }
-        
-        .highlight-item strong {
-            display: block;
-            color: #2d3748;
-            margin-bottom: 5px;
-            font-size: 0.95rem;
-        }
-        
-        .highlight-item span {
-            color: #718096;
-            font-size: 0.9rem;
-        }
-        
-        .contact {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            padding-top: 30px;
-            border-top: 2px solid #e2e8f0;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #4a5568;
-        }
-        
-        .contact-item svg {
-            width: 20px;
-            height: 20px;
-            color: #667eea;
-        }
-        
-        a {
-            color: #667eea;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: #764ba2;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 30px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .highlights {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="Mark Rasmussen, MD. Board-certified anesthesiologist, anesthesia director, and engineer. Medical device invention and production clinical software, informed by full-time clinical practice.">
+  <title>Mark Rasmussen, MD — Physician. Engineer.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f5f0;
+      --ink: #20211f;
+      --muted: #60615b;
+      --accent: #bf351e;
+      --rule: #c9c9bf;
+      --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --gutter: clamp(1.25rem, 5vw, 5rem);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: white; }
+    a { color: inherit; text-underline-offset: .25em; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+    a:hover { color: var(--accent); }
+    p, h1, h2, h3 { margin: 0; }
+    .shell { max-width: 1600px; margin-inline: auto; padding-inline: var(--gutter); }
+    .mono { font-family: var(--mono); font-size: .8125rem; line-height: 1.5; font-weight: 400; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .065em; }
+    .skip { position: absolute; left: var(--gutter); top: -6rem; padding: .75rem 1rem; background: var(--ink); color: white; z-index: 2; }
+    .skip:focus { top: 1rem; }
+    header { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding-block: 2rem; border-bottom: 1px solid var(--ink); }
+    .identity { font-size: 1rem; font-weight: 700; letter-spacing: -.025em; text-decoration: none; }
+    .identity span { font-weight: 400; color: var(--muted); }
+    nav { display: flex; gap: 2rem; }
+    nav a { font-family: var(--mono); font-size: .875rem; text-decoration: none; }
+    .hero { padding-block: clamp(3rem, 6vw, 6rem) 3rem; }
+    .hero-kicker { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 2.25rem; color: var(--muted); }
+    .hero-kicker span:first-child { color: var(--accent); }
+    h1 { font-size: clamp(4.25rem, 12.3vw, 11.5rem); line-height: .88; letter-spacing: -.075em; font-weight: 750; }
+    h1 span { display: block; }
+    h1 .engineer { margin-left: 17%; margin-top: .075em; }
+    .period { display: inline; color: var(--accent); }
+    .hero-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3.5rem; align-items: end; }
+    .position { max-width: 20ch; font-size: clamp(1.75rem, 3.1vw, 3rem); line-height: 1.08; letter-spacing: -.045em; font-weight: 500; }
+    .intro { max-width: 43ch; font-size: 1.125rem; line-height: 1.55; }
+    .intro a { display: inline-block; margin-top: 1.25rem; font-family: var(--mono); font-size: .875rem; text-decoration: none; border-bottom: 1px solid var(--ink); padding-block: .25rem; }
+    .arrow { display: inline-block; margin-left: .75rem; transition: transform 160ms ease; }
+    a:hover .arrow { transform: translate(2px, -2px); }
+    .credentials { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin-top: 1rem; }
+    .credential { padding: 1.5rem 1.25rem 1.5rem 0; }
+    .credential + .credential { border-left: 1px solid var(--rule); padding-left: 1.5rem; }
+    .credential strong { display: block; font-size: 1.125rem; font-weight: 600; letter-spacing: -.025em; margin-bottom: .35rem; }
+    .credential p { color: var(--muted); }
+    .section-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; padding-block: clamp(4rem, 8vw, 7rem); }
+    .section-heading { color: var(--accent); }
+    .section-heading span { margin-right: 1rem; }
+    .section-note { max-width: 23ch; margin-top: 1.5rem; font-size: 1rem; line-height: 1.5; color: var(--muted); }
+    .work-intro { font-size: clamp(2rem, 3.6vw, 3.75rem); line-height: 1.08; letter-spacing: -.05em; font-weight: 500; max-width: 22ch; margin-bottom: 3rem; }
+    .work-list { list-style: none; padding: 0; margin: 0; counter-reset: work; }
+    .work-list > li { counter-increment: work; display: grid; grid-template-columns: 2.25rem 1fr; gap: .75rem; border-top: 1px solid var(--rule); padding-block: 1.75rem 2rem; }
+    .work-list > li::before { content: "0" counter(work); font: .8125rem/1.5 var(--mono); color: var(--muted); padding-top: .4rem; }
+    .work-type { color: var(--muted); margin-bottom: .75rem; }
+    h3 { font-size: clamp(1.75rem, 2.7vw, 2.75rem); line-height: 1.1; letter-spacing: -.045em; font-weight: 500; }
+    h3 a { text-decoration-thickness: 1px; }
+    h3 .arrow { font-size: .7em; }
+    .work-description { font-size: 1.0625rem; line-height: 1.6; max-width: 48ch; margin-top: 1rem; color: var(--muted); }
+    .background { border-top: 1px solid var(--ink); }
+    .background-lead { max-width: 25ch; font-size: clamp(2rem, 3.6vw, 3.75rem); line-height: 1.1; letter-spacing: -.05em; font-weight: 500; }
+    .background-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    .background-copy p { font-size: 1.0625rem; line-height: 1.6; max-width: 34ch; }
+    footer { border-top: 1px solid var(--ink); padding-block: 1.5rem 2rem; display: flex; justify-content: space-between; gap: 1.5rem; color: var(--muted); }
+    footer a { text-decoration: none; }
+    @media (min-width: 1600px) { h1 { font-size: 11.5rem; } }
+    @media (max-width: 760px) {
+      header { padding-block: 1.5rem; gap: 1rem; }
+      nav { gap: 1rem; }
+      .hero-kicker { margin-bottom: 2rem; }
+      .hero-kicker span:last-child { display: none; }
+      h1 { font-size: clamp(3.7rem, 13.2vw, 6.5rem); }
+      h1 .engineer { margin-left: 7%; }
+      .hero-bottom { grid-template-columns: 1fr; gap: 1.75rem; margin-top: 2.5rem; }
+      .position { max-width: 21ch; }
+      .credentials { grid-template-columns: 1fr 1fr; }
+      .credential:nth-child(3) { border-left: 0; padding-left: 0; }
+      .credential:nth-child(n+3) { border-top: 1px solid var(--rule); }
+      .section-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .section-note { max-width: 40ch; margin-top: .75rem; }
+      .work-intro { margin-bottom: 2rem; }
+      .background-copy { gap: 1.5rem; }
+    }
+    @media (max-width: 420px) {
+      .identity span { display: block; margin-top: .25rem; }
+      .credential { padding-block: 1.25rem; }
+      .credential + .credential { padding-left: 1rem; }
+      .credential:nth-child(3) { padding-left: 0; }
+      .background-copy { grid-template-columns: 1fr; }
+      footer { flex-wrap: wrap; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .arrow { transition: none; }
+      a:hover .arrow { transform: none; }
+    }
+    @media print {
+      body { background: white; color: black; }
+      .shell { padding-inline: 0; }
+      nav, .skip, .intro a, footer a { display: none; }
+      .hero, .section-grid { padding-block: 2rem; }
+      h1 { font-size: 5rem; }
+      .work-list > li, .credentials { break-inside: avoid; }
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Mark D. Rasmussen, M.D.</h1>
-        <div class="credentials">Anesthesiologist • Entrepreneur • Innovator</div>
-        
-        <p class="tagline">
-            Physician-entrepreneur bridging clinical excellence with healthcare innovation. 
-            Combining 20+ years of anesthesiology expertise with bioengineering, software development, 
-            and med tech advisory experience.
-        </p>
-        
-        <div class="highlights">
-            <div class="highlight-item">
-                <strong>Clinical Practice</strong>
-                <span>Partner, Anesthesia Service Medical Group</span>
-            </div>
-            
-            <div class="highlight-item">
-                <strong>Med Tech Founder</strong>
-                <span>CEO, Sigil Science LLC</span>
-            </div>
-            
-            <div class="highlight-item">
-                <strong>Patent Holder</strong>
-                <span>Medical Device Innovation</span>
-            </div>
-            
-            <div class="highlight-item">
-                <strong>Military Service</strong>
-                <span>U.S. Navy, Operation Iraqi Freedom</span>
-            </div>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="shell">
+    <header>
+      <a class="identity" href="#top">Mark Rasmussen<span>, MD</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#background">Background</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="headline">
+        <div class="hero-kicker mono eyebrow">
+          <span>Two disciplines. One operator.</span>
+          <span>San Diego, California</span>
         </div>
-        
-        <div class="contact">
-            <div class="contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>San Diego, California</span>
-            </div>
+        <h1 id="headline"><span>Physician<span class="period">.</span></span><span class="engineer">Engineer<span class="period">.</span></span></h1>
+        <div class="hero-bottom">
+          <p class="position">Accountable for<br>what works.</p>
+          <div class="intro">
+            <p>I direct anesthesia at a San Diego ambulatory surgery center. I also engineer clinical systems—from a patented medical device to production software.</p>
+            <a href="#work">Selected work <span class="arrow" aria-hidden="true">↘</span></a>
+          </div>
         </div>
-    </div>
+      </section>
+      <div class="credentials" aria-label="Credentials and experience">
+        <div class="credential"><strong>Board-certified</strong><p class="mono">Anesthesiologist</p></div>
+        <div class="credential"><strong>UCSD</strong><p class="mono">Bioengineering</p></div>
+        <div class="credential"><strong>1 medical device patent</strong><p class="mono">Engineering beyond software</p></div>
+        <div class="credential"><strong>10+ years</strong><p class="mono">Production clinical software</p></div>
+      </div>
+      <section class="section-grid" id="work" aria-labelledby="work-heading">
+        <div>
+          <h2 class="section-heading mono eyebrow" id="work-heading"><span>01 /</span> Selected work</h2>
+          <p class="section-note">Clinical software built and shipped under my own LLC.</p>
+        </div>
+        <div>
+          <p class="work-intro">The work extends<br>beyond the operating room.</p>
+          <ol class="work-list">
+            <li><article>
+              <p class="work-type mono eyebrow">Pre-operative intelligence</p>
+              <h3>Prolepsis</h3>
+              <p class="work-description">A pre-operative medical intelligence platform. Engineering focused on the clinical work before surgery.</p>
+            </article></li>
+            <li><article>
+              <p class="work-type mono eyebrow">Surgical coordination</p>
+              <h3>Zoraida</h3>
+              <p class="work-description">Surgical case posting from the surgeon’s office to the facility. The handoff is the system.</p>
+            </article></li>
+            <li><article>
+              <p class="work-type mono eyebrow">ASC operations</p>
+              <h3><a href="https://ascdirector.com">ascdirector.com<span class="arrow" aria-hidden="true">↗</span></a></h3>
+              <p class="work-description">Compliance logging for ambulatory surgery centers. Built for the operational side of clinical practice.</p>
+            </article></li>
+            <li><article>
+              <p class="work-type mono eyebrow">Clinical systems / Device integration</p>
+              <h3>Anesthesia information<br>management system</h3>
+              <p class="work-description">An anesthesia information management system with HL7 device integration. Software connected to the equipment in the room.</p>
+            </article></li>
+          </ol>
+        </div>
+      </section>
+      <section class="section-grid background" id="background" aria-labelledby="background-heading">
+        <div><h2 class="section-heading mono eyebrow" id="background-heading"><span>02 /</span> Background</h2></div>
+        <div>
+          <p class="background-lead">Two disciplines.<br>Neither is a side project.</p>
+          <div class="background-copy">
+            <p>Bioengineering at UCSD. Service as a Navy combat physician. Today, a board-certified anesthesiologist and anesthesia director at a San Diego ambulatory surgery center.</p>
+            <p>One medical device patent. More than a decade writing production code alongside full-time clinical practice. I work across medicine and engineering because the problems do, too.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="mono">
+      <span>Mark Rasmussen, MD · San Diego</span>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </div>
 </body>
 </html>
